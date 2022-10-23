@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap");
+.wrapper {
+	position: relative;
+	overflow: hidden;
+	min-height: 100%;
+	padding: 30px;
+	
+}
+.page__title {
+	padding: 20px;
+	width: 200px;
+	height: 50px;
+}
+.page__link {
+	padding: 20px;
+	
+}
+.link {
+	color: #000;
+	transition: all 0.3s ease 0s;
+	position: relative;
+	left: 400px;
+}
+.link::before {
+	content: "";
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	left: -20px;
+	top: 0;
+	background: url("../img/Vector.jpg")0 0 / cover no-repeat;
+	animation-name: link-rotate;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+.link::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	width: 0%;
+	left: 0;
+	height: 2px;
+	background-color: purple;
+	transition: width 0.3s ease 0s;
+}
+.link:hover {
+	color: blueviolet;
+}
+.link:hover::before {
+	animation-play-state: paused;
+}
+.link:hover::after {
+	width: 100%;
+}
+@keyframes link-rotate {
+	0% {
+        transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.page__text {
+	color:aliceblue;
+	font-family: Lato;
+}
+.title {
+font-weight: 700;
+font-size: 40px;
+text-align: center;
+animation: title 1s ease forwards;
+transform: translate(0px,50%);
+opacity: 0;
+}
+.title:not(:last-child) {
+	margin-bottom: 20px;
+}
+.sub-title {
+font-size: 24px;
+text-align: center;
+animation: title 1s ease 0.5s forwards;
+transform: translate(0px,50%);
+opacity: 0;
+}
+.sub-title:not(:last-child) {
+	margin-bottom: 15px;
+}
+.text {
+	padding: 20px;
+	line-height: 1.5;
+	animation: title 1s ease 1s forwards;
+	transform: translate(0px,50%);
+    opacity: 0;
+}
+@keyframes title {
+	0% {
+        transform: translate(0px,50%);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0px,0%);
+		opacity: 1;
+	}
+}
+.page {
+	background: url("../img/fon-doroga.jpg") 0 0 / cover no-repeat;
+	width: 1200px;
+	height: 600px;
+}
+
+.page__heroi {
+	background: url("../img/masyanya.png") 0 0 /cover no-repeat;
+width: 400px;
+height: 400px;
+transform: translate(0px, 150px);
+left: 15px;
+top: 10px;
+position: absolute;
+z-index: 2;
+animation-name: rotate;
+animation-duration: 12s;
+animation-timing-function: ease;
+animation-iteration-count: 1;
+animation-direction: alternate;
+}
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+	20% 
+	{
+		transform: rotate(20deg);
+	}
+	80% 
+	{
+		transform:  translate(0px, 150px);
+	}
+	100% 
+	{
+		transform:  translate(1500px, 150px);
+	}
+}
+.page__car {
+	background: url("../img/car.png") 0 0 /cover no-repeat;
+	transform: translate(-200%);
+	width: 500px;
+	height: 400px;
+	left: 15px;
+    bottom: 80px;
+	position: absolute;
+	z-index: 1;
+	animation-name: drive;
+animation-duration: 5s;
+animation-timing-function: ease;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-delay: 6s;
+animation-fill-mode: forwards;
+}
+@keyframes drive {
+	0% {
+		transform: translate(0, 0px);
+	}
+	20% 
+	{
+		transform: translate(600px, 0px);
+	}
+	80% 
+	{
+		transform: translate(600px, 0px);
+	}
+	100% 
+	{
+		transform: translate(1500px, 0px);
+	}
+}
+.page__cloud {
+	background: url("../img/cloud.png") 0 0 /cover no-repeat;
+	width: 400px;
+	height: 300px;
+	left: 250px;
+    bottom: 80px;
+	transform: scale(0.2);
+	transform: translate(-600px);
+	position: absolute;
+	z-index: 3;
+	animation-name: effect;
+animation-duration: 5s;
+animation-timing-function: ease;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-delay: 6.5s;
+animation-fill-mode: forwards;
+}
+@keyframes effect {
+	0% {
+		transform: rotate(0);
+	}
+	50% 
+	{
+		transform: rotate(-90deg);
+	}
+	100% 
+	{
+		visibility: hidden;
+		opacity: -1;
+	}
+}
